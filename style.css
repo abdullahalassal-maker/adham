@@ -1066,13 +1066,8 @@ body {
   font-size: 3rem;
 }
 
-/* كلمة /project */
-.period {
-  color: #666;
-  font-size: 0.95rem;
-}
-
 /* للباقة المميزة */
 .featured .new-price-box {
   background: #c62d28;
 }
+
