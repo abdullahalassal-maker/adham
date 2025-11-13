@@ -471,7 +471,7 @@ header .bx-menu {
 
     font-size: 4rem;
 
-    color: var(--second-bd-color);
+    color: var(--text-color);
 
     margin-bottom: 20px;
 
@@ -696,6 +696,21 @@ header .bx-menu {
     text-align: center;
     perspective: 1000px;
 }
+.form-message {
+  margin-top: 10px;
+  font-weight: 600;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.form-message.success {
+  color: #2ecc71;
+}
+
+.form-message.error {
+  color: #e74c3c;
+}
+
 
 .contact form {
     display: flex;
@@ -821,15 +836,12 @@ header .bx-menu {
   transform: scale(1.2);
 }
 
-/* ==============================
-   Responsive Fix for Mobile
-   ============================== */
 @media (max-width: 768px) {
 
   /* عام */
   body {
-    padding-top: 70px; /* يدي مساحة للهيدر الثابت */
-    overflow-x: hidden; /* يمنع التمرير الأفقي */
+    padding-top: 70px; 
+    overflow-x: hidden; 
   }
 
   /* الهيدر والنافبار */
@@ -887,7 +899,7 @@ header .bx-menu {
     line-height: 1.6;
   }
 
-  /* الصور أو العناصر اللي بتخرج عن الإطار */
+ 
   img, .portfolio-box, .service-box {
     max-width: 100%;
     height: auto;
@@ -921,7 +933,7 @@ header .bx-menu {
   }
 
   .pricing-container {
-    grid-template-columns: 1fr;
+    grid-template-columns: 2fr;
   }
 
   /* التواصل */
@@ -1025,4 +1037,42 @@ body {
     .portfolio-layer a i {
         font-size: 1.5rem;
     }
+}
+/* السعر القديم */
+.old-price {
+  text-decoration: line-through;
+  color: #fffcfc;
+  font-size: 2.5rem;
+  opacity: 0.2;
+  transform: translateX(-10px); /* حركة بسيطة لليسار */
+ margin-top: -50px;
+}
+
+/* البوكس الأحمر */
+.new-price-box {
+  background: #e55835;
+  color: #fff;
+  padding: 6px 14px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* السعر الجديد */
+.new-price {
+  font-weight: bold;
+  font-size: 3rem;
+}
+
+/* كلمة /project */
+.period {
+  color: #666;
+  font-size: 0.95rem;
+}
+
+/* للباقة المميزة */
+.featured .new-price-box {
+  background: #c62d28;
 }
