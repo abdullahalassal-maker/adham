@@ -339,3 +339,35 @@ if (fadeElement && typeof Typed !== 'undefined') {
   });
 
 }
+document.getElementById('contactForm').addEventListener('submit', async function(e) {
+  e.preventDefault();
+
+  const form = e.target;
+  const messageBox = document.getElementById('formMessage');
+  const formData = new FormData(form);
+
+  // Reset message
+  messageBox.textContent = '';
+  messageBox.className = 'form-message';
+
+  try {
+    const response = await fetch(form.action, {
+      method: form.method,
+      body: formData,
+      headers: { 'Accept': 'application/json' }
+    });
+
+    if (response.ok) {
+      messageBox.textContent = "✅ Message sent successfully!";
+      messageBox.classList.add('success');
+      form.reset();
+    } else {
+      messageBox.textContent = "❌ Something went wrong. Please try again.";
+      messageBox.classList.add('error');
+    }
+  } catch (error) {
+    messageBox.textContent = "⚠️ Network error. Please check your connection.";
+    messageBox.classList.add('error');
+  }
+});
+
